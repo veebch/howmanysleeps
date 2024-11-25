@@ -2,6 +2,12 @@
 
 # How Many Sleeps?
 
-An Advent calendar type decoration that uses a Raspberry Pi Pico W (2) to tell you how many sleeps until Christmas. It has
+An Advent calendar progress bar decoration that uses a Raspberry Pi Pico W (2) to tell you how many sleeps until Christmas. It has
 a light dependent resistor (LDR) to make the lights only turn on when it is dark and an override button so that you can turn 
-the lights off at bedtime. 
+the lights off at bedtime.
+
+## VIDEO
+
+## Assembly
+
+### Components
