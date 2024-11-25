@@ -12,7 +12,7 @@ the lights off at bedtime.
 ### Components
 
 - Rasperry Pi Pico 2W (it is compatible with the original W too)
-- 1m 144 LED neopixel strip
+- 1m 144 LED neopixel strip (We used a WS2812 B Eco)
 - Momentary Switch
 - Light Dependent Resistor (LDR)
 - Prototype board
