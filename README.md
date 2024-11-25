@@ -22,6 +22,8 @@ the lights off at bedtime.
 
 ## Build Video
 
+A whizz through the build process:
+
 [![YouTube](http://i.ytimg.com/vi/zQKZN75o05YGG/hqdefault.jpg)](https://www.youtube.com/watch?v=zQKZN75o05YGG)
 
 ## Wiring
