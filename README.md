@@ -8,6 +8,16 @@ the lights off at bedtime.
 
 ## VIDEO
 
+This is a 3 minute video that gives an overview of the build
+
 ## Assembly
 
 ### Components
+
+- Rasperry Pi Pico 2W (it is compatible with the original W too)
+- 1m 144 LED neopixel strip
+- Momentary Switch
+- Light Dependent Resistor (LDR)
+- Prototype board
+- 1m L shaped metal strip
+- 1m wooden strip (rectangular cross section) 
