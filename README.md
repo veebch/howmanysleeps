@@ -6,9 +6,6 @@ An Advent calendar progress bar decoration that uses a Raspberry Pi Pico W (2) t
 a light dependent resistor (LDR) to make the lights only turn on when it is dark and an override button so that you can turn 
 the lights off at bedtime.
 
-## VIDEO
-
-This is a 3 minute video that gives an overview of the build
 
 ## Assembly
 
@@ -22,3 +19,17 @@ This is a 3 minute video that gives an overview of the build
 - 1m L shaped metal strip
 - 1m wooden strip (rectangular cross section) 
 - 23 separator fins and two end pieces (all in [/3d](3d) directory)
+
+## Build Video
+
+## Wiring
+
+The LDR and the momentary switch both go to GND from GPIO 26 and 15 respectively. 
+The NeoPixel strip is connected to GPIO 19 (as well as VSYS and GND)
+
+## Operation
+
+At dusk (the LDR value can be adjusted in the code if needed) the lights turn on. If it is currently Advent, then the bar acts as a progress bar, charting the number of sleeps until Christmas.
+Outside of advent, the light will be a 'breathing' pattern.
+
+Pressing the momentary switch will disable the lights until it gets light again, at which point, the Pico will reset.
