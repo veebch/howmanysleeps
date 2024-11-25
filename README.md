@@ -21,3 +21,4 @@ This is a 3 minute video that gives an overview of the build
 - Prototype board
 - 1m L shaped metal strip
 - 1m wooden strip (rectangular cross section) 
+- 23 separator fins and two end pieces (all in `./3d` directory)
