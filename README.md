@@ -35,6 +35,10 @@ A whizz through the build process:
 The LDR and the momentary switch both go to GND from GPIO 26 and 15 respectively. 
 The NeoPixel strip is connected to GPIO 19 (as well as VSYS and GND)
 
+## Software
+
+Copy the file main.py onto your Pico using whatever method you find easiest. For this single file, it is probably quickest just to use Thonny. Put your WiFi details into the code and that should be it!
+
 ## Operation
 
 At dusk (the LDR value can be adjusted in the code if needed) the lights turn on. If it is currently Advent, then the bar acts as a progress bar, charting the number of sleeps until Christmas.
