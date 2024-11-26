@@ -15,10 +15,15 @@ Outside of advent, it acts as an automatic light, which is also pretty.
 
 ### Components
 
+#### Electronics 
+
 - Rasperry Pi Pico 2W (it is compatible with the original W too)
 - 1m 144 LED neopixel strip (We used a WS2812 B Eco)
 - Momentary Switch
 - Light Dependent Resistor (LDR)
+
+#### Enclosure
+ 
 - Prototype board
 - 1m L shaped metal strip
 - 1m wooden strip (rectangular cross section) 
