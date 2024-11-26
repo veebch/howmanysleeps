@@ -26,8 +26,10 @@ the lights off at bedtime.
 
 A whizz through the build process:
 
-[![YouTube](http://i.ytimg.com/vi/zQKZN75o05YGG/0.jpg)](https://www.youtube.com/watch?v=zQKZN75o05YGG)
+[![YouTube](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
+[![YouTube](http://i.ytimg.com/vi/zQKZN75o05Y/0.jpg)](https://www.youtube.com/watch?v=zQKZN75o05Y)
+'
 ## Wiring
 
 The LDR and the momentary switch both go to GND from GPIO 26 and 15 respectively. 
