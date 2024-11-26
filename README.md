@@ -38,4 +38,4 @@ The NeoPixel strip is connected to GPIO 19 (as well as VSYS and GND)
 At dusk (the LDR value can be adjusted in the code if needed) the lights turn on. If it is currently Advent, then the bar acts as a progress bar, charting the number of sleeps until Christmas.
 Outside of advent, the light will be a 'breathing' pattern.
 
-Pressing the momentary switch will disable the lights until it gets light again, at which point, the Pico will reset.
+Pressing the momentary switch will disable the lights until it gets light again. When it gets bright again, the Pico will reset.
