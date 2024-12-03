@@ -40,7 +40,7 @@ def connect_to_wifi(ssid, password):
 
 # Function to get timezone using ip-api.com
 def get_timezone():
-    url = "http://ip-api.com/json/"
+    url = "http://ipwhois.app/json/"
     try:
         print("Fetching timezone from IP...")
         response = urequests.get(url)
