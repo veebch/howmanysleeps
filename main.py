@@ -8,8 +8,8 @@ import math
 
 # Globals
 # WiFi credentials
-SSID = 'YOUR_SSID'
-PASSWORD = 'WIFI_PASSWORD'
+SSID = 'whyayefi'
+PASSWORD = 'dizzyflower278'
 PIXELS = 144
 
 # Pin Assignment
@@ -100,9 +100,10 @@ def clamp(value, min_val=0, max_val=255):
     # Clamp a value between min_val and max_val.
     return max(min(int(value), max_val), min_val)
 
-
-def progress(np,sleeps, spread):
+def progress(np,sleeps, spread, howdark):
     advent = sleeps <= 24
+    brightfactor=min(int(255*400/(2*(howdark+1))),255)
+    print(brightfactor)
     if advent:
         # Advent adjustment to progress bar
         # to make things confusing, LEDs are indexed from (PIXELS-1) to 0
@@ -116,20 +117,21 @@ def progress(np,sleeps, spread):
                 else:
                     pixelblockmin = 0
                     # For Christmas Eve, use all remaining pixels
-                # print(f'Day: {i}. {pixelblockmin} to {pixelblockmax}')
+                #print(f'Day: {i}. {pixelblockmin} to {pixelblockmax}')
                 for j in range(pixelblockmin,pixelblockmax):
                 # Each block drifts at random, clamped between 0 and 255
                     r, g, b = np[j]  # The current RGB values of the pixel
-                    r = clamp(r + variation_1)
-                    g = clamp(g - variation_1)
-                    b = clamp(b + variation_2)
-                    np[j] =  (r,g,b)
+                    r = clamp(r + variation_1,0,brightfactor)
+                    g = clamp(g - variation_1,0,brightfactor)
+                    b = clamp(int(500/(howdark+1)*(b + variation_2)),0,brightfactor)
+                    
+                    
+                    np[j] = (r,g,b) 
     else:
         for i in range(PIXELS):
             # If it is not advent, then this formula will give a nice 'breathing' effect
             brightness = 32 * (1 + 4 *(math.sin(spread + math.pi)+1)) * math.exp(-(PIXELS/2-i) ** 2 / (1+20*(math.sin(spread)+1)) ** 2)
             np[i] =  ( clamp(brightness), clamp(.40*brightness), clamp(.15*brightness))
-
     np.write()
 
 
@@ -144,8 +146,8 @@ def main():
     global bedtime
 
     # Initialise local variables
-    LDR_THRESHOLD = 700 # The light dependent resistor reading threshold for light/dark
-    CONSECUTIVE_COUNT = 25 # Consecutive readings needed to count a reading as 'consistent
+    LDR_THRESHOLD = 200 # The light dependent resistor reading threshold for light/dark
+    CONSECUTIVE_COUNT = 250 # Consecutive readings needed to count a reading as 'consistent
     consecutive_light_count = 0  # Counter for consecutive light readings below the threshold
     consecutive_dark_count = 0  # Counter for consecutive light readings below the threshold
     consistent_light = False
@@ -188,9 +190,10 @@ def main():
     # Main Loop
     while True:
         spread = (spread +.05) % twopi # The parameter that gets passed to progress for periodic light
-        dark = ldr.read_u16() > LDR_THRESHOLD # True if ldr value is read as high
+        howdark = ldr.read_u16()
+        dark = howdark > LDR_THRESHOLD # True if ldr value is read as high
         if consistent_dark and not bedtime:  # Darkness detected
-            progress(np,sleeps,spread)
+            progress(np,sleeps,spread,howdark)
         else:
             if bedtime or consistent_light:
                 lightsout(np)
@@ -215,4 +218,3 @@ def main():
 # Run the main program
 if __name__ == "__main__":
     main()
-
